@@ -51,6 +51,7 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <button className="btn btn-wide">Wide</button>
                         <p className='mb-4 ml-8'><Link to="/register" className=" ps-3 label-text-alt link link-hover">
                        New to the Auth Master? Please Register
                         </Link></p>
