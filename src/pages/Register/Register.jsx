@@ -20,6 +20,20 @@ const Register = () => {
         const password = form.password.value;
 
         console.log(name, email, password);
+        //validate
+        if (password.length < 6) {
+            setError('Please add at least 6 characters in your password');
+        }
+        else if (!/(?=.*[A-Z])/.test(password)) {
+            setError('Please Add atleast one uppercase')
+            return;
+        }
+        else if (!/(?=.*[0-9].*[0-9])/.test(password)) {
+            setError('Please Add atleast two numbers')
+            return;
+        }
+
+        //create user
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;

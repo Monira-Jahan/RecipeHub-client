@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
+import { FaBeer } from 'react-icons/fa';
 
 const Login = () => {
     const {signIn}=useContext(AuthContext);
@@ -50,8 +51,11 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+                            <hr></hr>
+                            <button className="btn btn-wide bg-blue-500 border-none">Wide</button>
+                            <button className="btn btn-wide bg-red-600 border-none">Wide</button>
                         </form>
-                        <button className="btn btn-wide">Wide</button>
+                        
                         <p className='mb-4 ml-8'><Link to="/register" className=" ps-3 label-text-alt link link-hover">
                        New to the Auth Master? Please Register
                         </Link></p>
