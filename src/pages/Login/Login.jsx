@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
-import { FaBeer } from 'react-icons/fa';
+import { FaGoogle,FaGithub} from 'react-icons/fa';
 
 const Login = () => {
     const {signIn}=useContext(AuthContext);
@@ -25,13 +25,13 @@ const Login = () => {
    
        }
     return (
-        <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col">
+        <div className="hero min-h-screen w-full bg-slate-200">
+                <div className="container hero-content flex-col">
                     <div className="text-center">
-                        <h1 className="text-5xl font-bold">Please Login now!</h1>
+                        <h1 className="sm:mt-12 pr-12 lg:text-5xl text-2xl font-bold">Please Login now!</h1>
                         
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full sm:w-50 max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -49,11 +49,11 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary hover:font-bold">Login</button>
                             </div>
                             <hr></hr>
-                            <button className="btn btn-wide bg-blue-500 border-none">Wide</button>
-                            <button className="btn btn-wide bg-red-600 border-none">Wide</button>
+                            <button className="btn btn-wide bg-blue-500 border-none"><FaGoogle/>Login With Google</button>
+                            <button className="btn btn-wide bg-red-600 border-none"><FaGithub/>Login with GitHub</button>
                         </form>
                         
                         <p className='mb-4 ml-8'><Link to="/register" className=" ps-3 label-text-alt link link-hover">
