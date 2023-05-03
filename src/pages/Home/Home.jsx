@@ -3,6 +3,7 @@ import React from 'react';
 const Home = () => {
     return (
         <div>
+            {/* banner Section started */}
             <div className="bg-slate-100">
                 <div className="grid lg:grid-cols-2 grid-cols-1">
                     <div className='mx-8'>
@@ -27,6 +28,7 @@ const Home = () => {
                 </div>
 
             </div>
+            {/* Banner section ended */}
         </div>
 
 

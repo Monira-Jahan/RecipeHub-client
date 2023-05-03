@@ -28,7 +28,7 @@ const Login = () => {
         <div className="hero min-h-screen w-full bg-slate-200">
                 <div className="container hero-content flex-col">
                     <div className="text-center">
-                        <h1 className="sm:mt-12 pr-12 lg:text-5xl text-2xl font-bold">Please Login now!</h1>
+                        <h1 className="sm:pt-24 pr-12 lg:text-5xl text-2xl font-bold">Please Login now!</h1>
                         
                     </div>
                     <div className="card flex-shrink-0 w-full sm:w-50 max-w-sm shadow-2xl bg-base-100">
