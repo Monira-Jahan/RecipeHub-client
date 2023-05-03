@@ -1,31 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Header = () => {
+    const {user,logOut}=useContext(AuthContext);
+
+    const handleLogout=()=>{
+       logOut()
+        .then(()=>{})
+        .catch(error=>console.error(error));
+    }
     return (
-        <div>
-            <div className="navbar bg-base-100">
-  <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl">RecipeHub</a>
-  </div>
-  <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
-      <Link to="/"><a>Home</a></Link>
-      <li tabIndex={0}>
-        <a>
-          Parent
-          <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
-        </a>
-        <ul className="p-2 bg-base-100">
-          <li><a>Submenu 1</a></li>
-          <li><a>Submenu 2</a></li>
-        </ul>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
-  </div>
-</div>
+
+        <div className="">
+            <div className="navbar rounded drop-shadow-xl bg-teal-200 text-gray">
+                <div className="flex-1">
+                    <a className="btn btn-ghost normal-case text-xl">RecipeHub</a>
+                </div>
+                <div className="flex-none text-center">
+                    <ul className="menu menu-horizontal px-1 not-italic hover:italic">
+                        <Link className=" btn btn-ghost normal-case text-xl me-3 font-semibold" to="/home">Home</Link>
+                        <Link className="btn btn-ghost normal-case text-xl me-3 font-semibold" to="/blogs">Blog</Link>
+
+                        {
+                            user ? <>
+                                <span>{user.email}</span>
+                                <button onClick={handleLogout} className="btn btn-xs">Sign Out</button>
+
+                            </> : <Link className="btn btn-ghost normal-case text-xl font-semibold" to="/login">Login</Link>
+                        }
+                    </ul>
+                </div>
+            </div>
         </div>
+
     );
 };
 
