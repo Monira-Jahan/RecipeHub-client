@@ -18,8 +18,9 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+        const photo=form.photo.value;
 
-        console.log(name, email, password);
+        console.log(name, email, password,photo);
         //validate
         if (password.length < 6) {
             setError('Please add at least 6 characters in your password');

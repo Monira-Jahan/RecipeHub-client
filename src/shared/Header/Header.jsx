@@ -21,15 +21,20 @@ const Header = () => {
                         <li><Link to="/">Home</Link></li>
                         <li><Link to="/blogs" className="justify-between">Blog</Link>
                         </li>
-                        <li>
-                        {
-                            user ? <>
-                                <span>{user.email}</span>
-                                <button onClick={handleLogout} className="btn btn-xs">Sign Out</button>
+                  
+                            {
+                                user ? <>
+                                    {/* <div className="avatar">
+                                        <div className="w-12">
+                                            <img src={user.photoURL}/>
+                                        </div>
+                                    </div>: */}
+                                    <span>{user.displayName}</span>
+                                  <button onClick={handleLogout} className="btn btn-xs">Sign Out</button>
 
-                            </> : <Link className="btn btn-ghost normal-case text-base" to="/login">Login</Link>
-                        }
-                        </li>
+                                </> : <Link className="btn btn-ghost normal-case text-base" to="/login">Login</Link>
+                            }
+                        
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">RecipeHub</a>
@@ -41,13 +46,13 @@ const Header = () => {
                         <Link to="/blogs">Blog</Link>
                     </li>
                     <li>
-                    {
-                        user ? <>
-                            <span>{user.email}</span>
-                            <button onClick={handleLogout} className="btn btn-xs rounded py-6 bg-blue-300 border-none">Sign Out</button>
+                        {
+                            user ? <>
+                                <span>{user.email}</span>
+                                <button onClick={handleLogout} className="btn btn-xs rounded py-6 bg-blue-300 border-none">Sign Out</button>
 
-                        </> : <Link className=" " to="/login">Login</Link>
-                    }
+                            </> : <Link className=" " to="/login">Login</Link>
+                        }
                     </li>
                 </ul>
             </div>
