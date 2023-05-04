@@ -24,17 +24,17 @@ const Header = () => {
                   
                             {
                                 user ? <>
-                                    {/* <div className="avatar">
+                                    <div className="avatar">
                                         <div className="w-12">
                                             <img src={user.photoURL}/>
                                         </div>
-                                    </div>: */}
-                                    <span>{user.displayName}</span>
+                                    </div>:
+                                    <span>{user.photoURL}</span>
                                   <button onClick={handleLogout} className="btn btn-xs">Sign Out</button>
 
                                 </> : <Link className="btn btn-ghost normal-case text-base" to="/login">Login</Link>
                             }
-                        
+                
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">RecipeHub</a>

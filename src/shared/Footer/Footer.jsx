@@ -19,7 +19,7 @@ const Footer = () => {
                         </div>
   </div> 
   <div className='text-white font-medium'>
-    <span className="footer-title">Company</span> 
+    <span className="footer-title">Links</span> 
     <Link to="/" className="link link-hover">Home</Link> 
     <Link className="link link-hover">Chefs</Link>
     <Link to="/blogs" className="link link-hover">Blogs</Link> 
