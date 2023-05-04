@@ -40,6 +40,29 @@ const Blogs = () => {
                         
                     </div>
                 </div>
+                 {/* Second Card */}
+                 <div className="card w-96 h-100 bg-blue-300 text-primary-content mt-6 hover:bg-slate-300">
+                    <div className="card-body">
+                        <h2 className="text-black card-title"> Question No-2: How to validate React props using PropTypes</h2>
+                        <h2 className="text-black card-title"> Answer:</h2> 
+                        <p className='text-black text-sm'>Props are an important mechanism for passing the read-only attributes to React components.
+
+                        <ul>
+                            <li>
+                                <strong>1. PropTypes.any :</strong>The prop can be of any data type.</li>
+                                <li><strong>2. PropTypes.bool : </strong>The prop should be a Boolean</li>
+                               <li> <strong>3. PropTypes.number :</strong> The prop should be a number.</li>
+                               <li> <strong>4. PropTypes.string :</strong> The prop should be a string.</li>
+                                <li><strong>5. PropTypes.func : </strong>The prop should be a function.</li>
+                                <li><strong>6. PropTypes.array :</strong> The prop should be an array.
+                            </li>
+                        </ul>
+                        </p>
+                        
+                        
+                    </div>
+                </div>
+                {/* Third Card */}
                
             </div>
 
