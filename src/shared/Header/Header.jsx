@@ -44,7 +44,7 @@ const Header = () => {
                     {
                         user ? <>
                             <span>{user.email}</span>
-                            <button onClick={handleLogout} className="btn btn-xs">Sign Out</button>
+                            <button onClick={handleLogout} className="btn btn-xs rounded py-6 bg-blue-300 border-none">Sign Out</button>
 
                         </> : <Link className=" " to="/login">Login</Link>
                     }

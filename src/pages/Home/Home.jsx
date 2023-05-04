@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ChefsSection from '../ChefsSection/ChefsSection';
 
 const Home = () => {
+    const[chefs,setChefs]=useState();
+    useEffect(()=>{
+        fetch('http://localhost:5000/chefs')
+        .then(res=>res.json())
+        .then(data=>setChefs(data))
+        .catch(error=>console.error(error))
+    },[])
     return (
         <div>
             {/* banner Section started */}
@@ -29,6 +37,21 @@ const Home = () => {
 
             </div>
             {/* Banner section ended */}
+         {/* Chef Section */}
+            <div>
+            <h3 className="text-center pt-5 pb-2 text-3xl font-extrabold">Our Chefs </h3>
+                <p className='text-center text-xs font-normal pb-3 lg:px-48'>Simply Recipes was founded in 2003 by Elise Bauer as a home cooking blog to record her favorite family recipes. Today, Simply Recipes has grown into a trusted resource for home cooks with more than 3,000 tested recipes, guides, and meal plans, drawing over 15 million readers each month from around the world. </p>
+                <div className="grid lg:grid-cols-2 grid-cols-1 lg:mx-48 h-100">
+                {
+                    chefs ?.map(chef => <ChefsSection
+                        key={chef.id}
+                        chef={chef}
+                    >
+                        
+                    </ChefsSection>)
+                }
+                </div>
+            </div>
         </div>
 
 
