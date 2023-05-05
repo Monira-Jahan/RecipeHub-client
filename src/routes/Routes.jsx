@@ -7,6 +7,7 @@ import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
 import ChefDetails from "../pages/ChefDetails/ChefDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router=createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router=createBrowserRouter([
             {
                 path:'/chefdetails/:id',
                
-                element:<ChefDetails></ChefDetails>,
+                element:<PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
                 loader:async({params})=>{
                     const res=await fetch("http://localhost:5000/chefs");
                     const data=await res.json();
