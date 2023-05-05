@@ -31,7 +31,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='lg:mx-36 my-4 sm:pl-8'>
-                        <img class="lg:h-80 lg:w-50 sm:w-100" src="./public/images/italian-cuisine.png" alt="" />
+                        <img class="lg:h-80 lg:w-50 sm:w-100" src="https://ibb.co/q5J1xWw" alt="" />
                     </div>
 
 

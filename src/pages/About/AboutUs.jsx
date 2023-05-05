@@ -6,7 +6,7 @@ const AboutUs = () => {
             <div className="bg-slate-100">
                 <div className="grid lg:grid-cols-2 grid-cols-1">
                     <div className='lg:mx-36 my-4 sm:pl-8'>
-                        <img class="lg:h-80 lg:w-50 sm:w-100" src="./public/images/pasta.png" alt="" />
+                        <img class="lg:h-80 lg:w-50 sm:w-100" src="https://ibb.co/THBFbKs" alt="" />
                     </div>
                     <div className='mx-8'>
                         <h1 className="pt-12 pb-4 lg:pl-6 text-3xl font-extrabold hover:text-blue-600">About Us</h1>
