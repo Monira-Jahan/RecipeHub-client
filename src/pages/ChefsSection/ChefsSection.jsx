@@ -2,17 +2,18 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FaRegThumbsUp } from 'react-icons/fa';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ChefsSection = ({chef}) => {
     const {id,picture, name, years_of_experience, numbers_of_recipes, likes } = chef;
- 
+     
     
     
     return (
    
         <div className="">
             <div className="card bg-violet-300 lg:w-96 sm:mx-3 h-100 glass mb-8">
-                <figure><img className="h-64 w-96 " src={picture} alt=" " /></figure>
+                <figure><LazyLoadImage className="h-64 w-96 " src={picture} alt=" " /></figure>
                 <div className="card-body">
                     <h2 className="card-title font-bold text-xl">{name}</h2>
                     <p><strong>Experience:</strong> {years_of_experience}</p>

@@ -1,8 +1,12 @@
 import React from 'react';
-
+import { PDFDownloadLink } from "@react-pdf/renderer";
 const Blogs = () => {
     return (
         <div >
+            
+            <div className="bg-slate-100">
+          
+      </div>
             {/* banner Section started */}
             <div className="bg-slate-100">
                 <div className="">
@@ -12,7 +16,7 @@ const Blogs = () => {
                         <p className="text-sm lg:px-48 pb-6 text-center"><strong>RecipeHub</strong> Recipes is here to help you cook delicious meals with less stress and more joy.We offer recipes and cooking advice for home cooks, by home cooks. Helping create “kitchen wins” is what we’re all about. </p>
                     </div>
                 </div>
-            </div>
+                            </div>
             {/* Banner section ended */}
             <div className="grid lg:grid-cols-2 grid-cols-1 lg:mx-48 my-8">
                 {/* First Card */}
