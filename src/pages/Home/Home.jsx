@@ -31,7 +31,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className='lg:mx-36 my-4 sm:pl-8'>
-                        <img class="lg:h-80 lg:w-50 sm:w-100" src="https://ibb.co/q5J1xWw" alt="" />
+                        <img class="lg:h-80 lg:w-50 sm:w-100" src="https://p.kindpng.com/picc/s/6-63194_pizzaolo-png-dessin-tube-alimentation-cuisinier-italian-food.png" alt="" />
                     </div>
 
 
@@ -41,8 +41,8 @@ const Home = () => {
             {/* Banner section ended */}
          {/* Chef Section */}
             <div>
-            <h3 className="text-center pt-5 pb-2 text-3xl font-extrabold">Our Chefs </h3>
-                <p className='text-center text-xs font-normal pb-3 lg:px-48'>Simply Recipes was founded in 2003 by Elise Bauer as a home cooking blog to record her favorite family recipes. Today, Simply Recipes has grown into a trusted resource for home cooks with more than 3,000 tested recipes, guides, and meal plans, drawing over 15 million readers each month from around the world. </p>
+            <h3 className="text-center pt-12 pb-4 text-3xl font-extrabold">Our Chefs </h3>
+                <p className='text-center text-xs font-normal pb-8 lg:px-48'>Simply Recipes was founded in 2003 by Elise Bauer as a home cooking blog to record her favorite family recipes. Today, Simply Recipes has grown into a trusted resource for home cooks with more than 3,000 tested recipes, guides, and meal plans, drawing over 15 million readers each month from around the world. </p>
                 <div className="grid lg:grid-cols-3 grid-cols-1 lg:mx-6 w-25 h-100">
                 {
                     chefs ?.map(chef => <ChefsSection

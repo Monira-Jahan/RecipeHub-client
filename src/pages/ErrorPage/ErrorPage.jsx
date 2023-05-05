@@ -5,12 +5,12 @@ const ErrorPage = () => {
     console.log(error);
     return (
         <div>
-            <section className='flex items-center py-6 px-48 my-5 bg-gradient-to-r from-red-400 to-white-400 text-gray-900'>
+            <section className='flex items-center py-6 px-48 my-5 bg-white-400 text-gray-900'>
                 <div className='container px-5 mx-5 py-5 '>
 
                     <div className='max-w-md text-center'>
                         <h2 className='mb-8 font-extrabold fs-1'>
-                            <img src="https://ibb.co/b2ML5v5"/>
+                            <img src="https://cdn.presslabs.com/wp-content/uploads/2018/03/custom-error-pages.png"/>
                             <h1 className="pb-0 pt-4"> <span className='pb-3 sr-only'>Error</span> {status || 404}</h1>
                         </h2>
                         <h3>PAGE NOT FOUND</h3>

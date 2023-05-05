@@ -4,6 +4,7 @@ const ContactUs = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-base-200 mt-6 shadow-2xl rounded">
+                
                 <div className="hero-content lg:flex-row flex-col ">
                     <div className="text-center">
                         <h1 className="text-3xl font-bold pt-4 hover:text-violet-500">Contact Us!</h1>
@@ -13,13 +14,13 @@ const ContactUs = () => {
                         <div className="card-body rounded bg-gradient-to-r from-violet-400 to-fuchsia-400">
                         <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Your Name</span>
+                                    <span className="label-text text-white font-bold">Your Name</span>
                                 </label>
                                 <input type="text" placeholder="Your Name" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text"> Your Email</span>
+                                    <span className="text-white font-bold label-text"> Your Email</span>
                                 </label>
                                 <input type="text" placeholder="Email" className="input input-bordered" />
                             </div>
