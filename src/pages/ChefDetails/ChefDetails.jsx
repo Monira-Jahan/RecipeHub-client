@@ -7,7 +7,7 @@ const ChefDetails = () => {
     console.log(chefDetails);
     const[recipes,setRecipes]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/chefs')
+        fetch('https://b710-chef-recipe-hunter-server-monira-jahan.vercel.app/chefs')
         .then(res=>res.json())
         .then(data=>setRecipes(data))
         .catch(error=>console.error(error))

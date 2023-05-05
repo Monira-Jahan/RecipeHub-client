@@ -100,19 +100,19 @@ const Login = () => {
                             </label>
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             <label className="label">
-                                <Link href="#" className="label-text-alt link link-hover">Forgot password?Please <button onClick={handleResetPassword} className='btn btn-link'>Reset Password</button></Link>
+                                <Link href="#" className="label-text-alt link link-hover">Forgot password?Please <button onClick={handleResetPassword} className='btn btn-link font-normal text-sm'>Reset Password</button></Link>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
+                        <div className="form-control mt-2">
                             <button className="btn btn-primary hover:font-bold">Login</button>
                         </div>
                         <hr></hr>
-                        <button onClick={handleGoogleSignIn}className="btn btn-wide bg-blue-500 border-none"><FaGoogle />Login With Google</button>
-                        <button onClick={handleGithubSignin}className="btn btn-wide bg-red-600 border-none"><FaGithub />Login with GitHub</button>
+                        <button onClick={handleGoogleSignIn}className="btn btn-wide bg-blue-500 border-none mx-6"><FaGoogle />Login With Google</button>
+                        <button onClick={handleGithubSignin}className="btn btn-wide bg-red-600 border-none mx-6"><FaGithub />Login with GitHub</button>
                     </form>
 
-                    <p className='mb-4 ml-8'><Link to="/register" className=" ps-3 label-text-alt link link-hover">
-                        New to the Auth Master? Please Register
+                    <p className='mb-8 ml-8'><Link to="/register" className="ps-5 label-text-alt link link-hover">
+                        New to the Auth Master? Please <button className='btn btn-link'>Register</button>
                     </Link></p>
                     <p className="text-red-400">{error}</p>
                 </div>

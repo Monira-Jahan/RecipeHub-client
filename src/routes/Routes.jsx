@@ -24,7 +24,7 @@ const router=createBrowserRouter([
                
                 element:<PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
                 loader:async({params})=>{
-                    const res=await fetch("http://localhost:5000/chefs");
+                    const res=await fetch("https://b710-chef-recipe-hunter-server-monira-jahan.vercel.app/chefs");
                     const data=await res.json();
                     const chefs=data.find(chef=>chef.id == params.id)
                     return chefs;
