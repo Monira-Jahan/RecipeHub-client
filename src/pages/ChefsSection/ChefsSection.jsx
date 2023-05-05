@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FaRegThumbsUp } from 'react-icons/fa';
 
-const ChefsSection = ({ chef }) => {
-    const { picture, name, years_of_experience, numbers_of_recipes, likes } = chef;
+const ChefsSection = ({chef}) => {
+    const {id,picture, name, years_of_experience, numbers_of_recipes, likes } = chef;
+ 
+    
+    
     return (
    
         <div className="">
@@ -19,7 +22,7 @@ const ChefsSection = ({ chef }) => {
                     <p className='font-medium text-sm'><strong> Likes:</strong> {likes}</p> 
                         </div>
                     <div className="card-actions justify-start">
-                        <button className="btn btn-primary">View Recipes</button>
+                        <Link to={`chefdetails/${id}`} className="btn btn-primary">View Recipes</Link>
                     </div>
                 </div>
             </div>

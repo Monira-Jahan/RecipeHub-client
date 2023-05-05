@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 
 const Header = () => {
@@ -18,23 +18,25 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-transparent rounded-box w-52">
-                        <li><Link to="/">Home</Link></li>
+                        <li><NavLink to="/" className={({ isActive }) =>
+                            isActive ? "text-black font-bold" : ""
+                        }>Home</NavLink></li>
                         <li><Link to="/blogs" className="justify-between">Blog</Link>
                         </li>
-                  
-                            {
-                                user ? <>
-                                    <div className="avatar">
-                                        <div className="w-12">
-                                            <img src={user.photoURL}/>
-                                        </div>
-                                    </div>:
-                                    <span>{user.photoURL}</span>
-                                  <button onClick={handleLogout} className="btn btn-xs">Sign Out</button>
 
-                                </> : <Link className="btn btn-ghost normal-case text-base" to="/login">Login</Link>
-                            }
-                
+                        {
+                            user ? <>
+                                <div className="avatar">
+                                    <div className="w-12">
+                                        <img src={user.photoURL} />
+                                    </div>
+                                </div>:
+                                <span>{user.photoURL}</span>
+                                <button onClick={handleLogout} className="btn btn-xs">Sign Out</button>
+
+                            </> : <Link className="btn btn-ghost normal-case text-base" to="/login">Login</Link>
+                        }
+
                     </ul>
                 </div>
                 <a className="btn btn-ghost normal-case text-xl">RecipeHub</a>
@@ -48,10 +50,14 @@ const Header = () => {
                     <li>
                         {
                             user ? <>
-                                <span>{user.email}</span>
+                            <div>
+                                <img className='avatar w-12 rounded-full' src={user.photoURL} alt=""/>
+                              </div>
+                              <div>  
                                 <button onClick={handleLogout} className="btn btn-xs rounded py-6 bg-blue-300 border-none">Sign Out</button>
-
+                                </div>
                             </> : <Link className=" " to="/login">Login</Link>
+
                         }
                     </li>
                 </ul>

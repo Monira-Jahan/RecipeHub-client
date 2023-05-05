@@ -2,13 +2,22 @@ import React, { useContext, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { getAuth,sendPasswordResetEmail } from 'firebase/auth';
+import { getAuth,sendPasswordResetEmail ,signInWithPopup} from 'firebase/auth';
 import app from '../../firebase/firebase.config';
-const auth=getAuth(app);
+import { GoogleAuthProvider,GithubAuthProvider } from "firebase/auth";
+
+
 const Login = () => {
+    const auth=getAuth(app);
+    //Google sign in
+    const googleProvider=new GoogleAuthProvider();
+    //Github Sign in
+    const githubProvider=new GithubAuthProvider();
+
     const { signIn } = useContext(AuthContext);
     const emailRef=useRef();
     const [error, setError] = useState('');
+    // Sign in with emain and password
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -45,6 +54,31 @@ const Login = () => {
                 setError(error.message);
             })
     }
+
+    // Google Sign in
+    const handleGoogleSignIn=()=>{
+        signInWithPopup(auth,googleProvider)
+        .then(result=>{
+            const loggedInUser=result.user;
+            console.log(loggedInUser);
+            setuser(loggedInUser);
+        })
+        .catch(error=>{
+            console.log('error',error.message)
+        })
+    }
+    // Github sign in
+    const handleGithubSignin=()=>{
+        signInWithPopup(auth,githubProvider)
+        .then(result=>{
+            const loggedUser=result.user;
+            console.log(loggedUser);
+            setuser(loggedUser);
+        })
+        .catch(error=>{
+            console.log('error',error.message)
+        })
+       }
     return (
         <div className="hero min-h-screen w-full bg-slate-200">
             <div className="container hero-content flex-col">
@@ -73,8 +107,8 @@ const Login = () => {
                             <button className="btn btn-primary hover:font-bold">Login</button>
                         </div>
                         <hr></hr>
-                        <button className="btn btn-wide bg-blue-500 border-none"><FaGoogle />Login With Google</button>
-                        <button className="btn btn-wide bg-red-600 border-none"><FaGithub />Login with GitHub</button>
+                        <button onClick={handleGoogleSignIn}className="btn btn-wide bg-blue-500 border-none"><FaGoogle />Login With Google</button>
+                        <button onClick={handleGithubSignin}className="btn btn-wide bg-red-600 border-none"><FaGithub />Login with GitHub</button>
                     </form>
 
                     <p className='mb-4 ml-8'><Link to="/register" className=" ps-3 label-text-alt link link-hover">

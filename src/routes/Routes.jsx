@@ -5,6 +5,9 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import RecipeDetails from "../pages/RecipeDetails/RecipeDetails";
+import ChefDetails from "../pages/ChefDetails/ChefDetails";
+
 const router=createBrowserRouter([
     {
         path:'/',
@@ -16,6 +19,17 @@ const router=createBrowserRouter([
                 element:<Home></Home>
             },
             {
+                path:'/chefdetails/:id',
+               
+                element:<ChefDetails></ChefDetails>,
+                loader:async({params})=>{
+                    const res=await fetch("http://localhost:5000/chefs");
+                    const data=await res.json();
+                    const chefs=data.find(chef=>chef.id == params.id)
+                    return chefs;
+                  }
+                  },
+         {
                 path:'/blogs',
                 element:<Blogs></Blogs>
             },
