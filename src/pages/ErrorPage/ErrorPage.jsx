@@ -10,7 +10,7 @@ const ErrorPage = () => {
 
                     <div className='max-w-md text-center'>
                         <h2 className='mb-8 font-extrabold fs-1'>
-                            <img src="https://ibb.co/b2ML5v5" />
+                            <img src="https://ibb.co/b2ML5v5"/>
                             <h1 className="pb-0 pt-4"> <span className='pb-3 sr-only'>Error</span> {status || 404}</h1>
                         </h2>
                         <h3>PAGE NOT FOUND</h3>
